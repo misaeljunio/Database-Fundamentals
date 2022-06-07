@@ -117,7 +117,7 @@ WHERE valor >= ALL (
 
 -- Listar título do livro, nome do autor e nome da editora.
 -- A listagem deve exibir inclusive livros sem editora, livros sem autor,
--- autores sem livro e editoras sem livro.
+-- autores sem livro e editoras sem livro
 SELECT l.titulo, e.nome, a.nome
 FROM (livros l FULL OUTER JOIN editoras e ON id_editora = e.id)
      FULL OUTER JOIN livros_autores la ON l.isbn = la.isbn
