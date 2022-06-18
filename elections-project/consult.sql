@@ -1,7 +1,7 @@
--- *a
+-- a
 SELECT DISTINCT p.sigla, SUM(v.numero_votos) as numero_votos
 FROM (candidatos ca RIGHT OUTER JOIN partidos p ON p.numero = ca.numero_partido AND ca.cargo_id = 1)
-    LEFT OUTER JOIN votos v ON ca.numero_cand = v.numero_cand
+    LEFT OUTER JOIN votos v ON ca.numero_cand = v.numero_cand AND ca.localidade_id = v.localidade_id
 GROUP BY p.sigla
 ORDER BY numero_votos DESC;
 
@@ -28,7 +28,7 @@ WHERE d1.numero_votos > (
 );
 
 
--- *c
+-- c
 SELECT c.descricao, (
     SELECT SUM(v.numero_votos) as id_localidade_1
     FROM votos v, candidatos ca
