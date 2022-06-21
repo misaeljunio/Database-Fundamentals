@@ -52,7 +52,7 @@ GROUP BY Pnome;
 SELECT fpj.pid
 FROM fornpecaproj fpj
 GROUP BY fpj.pid
-HAVING COUNT(DISTINCT fpj.fid)>1;
+HAVING COUNT(DISTINCT fpj.fid) > 1;
 
 -- Encontre a quantidade total de peças fornecidas por cada fornecedor.
 -- Nessa relação deve constar mesmo os fornecedores que não fornecem
