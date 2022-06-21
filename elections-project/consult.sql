@@ -7,7 +7,7 @@ ORDER BY numero_votos DESC;
 
 
 -- b
---Visão
+-- View
 CREATE VIEW descricao_cand AS
 SELECT ca.nome, ca.numero_cand, c.descricao, p.sigla, l.nome AS localizacao, v.numero_votos
 FROM candidatos ca, votos v, partidos p, cargos c, localidades l
@@ -17,7 +17,7 @@ WHERE ca.numero_cand = v.numero_cand
     AND ca.cargo_id = c.id
     AND v.localidade_id = l.id;
 
---Consulta
+-- Query
 SELECT d1.nome
 FROM descricao_cand d1
 WHERE d1.numero_votos > (
